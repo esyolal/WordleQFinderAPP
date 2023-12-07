@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle Answer Finder</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="ui horizontal divider header">
+            <i class="magic icon"></i>
+            Today's wordle answer:</h1>
+        <h2>
+            <%= solution %>
+        </h2>
+        <a href="https://www.nytimes.com/games/wordle/index.html" target="_blank">Go solve it! </a>
+        <form action="POST">
+            <input type="text" id="datepicker">
+
+        </form>
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <script>
+        var picker = new Pikaday({
+            field: document.getElementById('datepicker'),
+            format: 'YYYY-MM-DD',
+            onSelect: function() {
+                console.log(picker);
+            }
+        });
+    </script>
+
+</html>
